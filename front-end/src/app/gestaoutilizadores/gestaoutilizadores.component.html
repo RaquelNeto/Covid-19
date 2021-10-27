@@ -1,0 +1,44 @@
+<div class="conteudo">
+
+    <h1 class="titulo"> Gestão Utilizadores
+        <button class="criar"><a routerLink="/criarutilizador"> Criar Utilizador</a></button>
+    </h1>
+
+    <form class="form" method="post" action="pagina_de_resultados.html">
+        <input #numeroutente type="text" name="q" value="numero utente...">
+        <button> <a type="submit" (click)="findBynumero_utente(numeroutente.value)"  value="Pesquisar">PESQUISAR </a></button>
+    </form><br><br><br>
+
+    <table class="tabelas" border="2">
+        <!--*ngIf="isAdmin() && utilizadorAtual"-->
+        <thead>
+            <tr style="font-weight:bold;">
+                <td>Nome</td>
+                <td>Número de Utente</td>
+                <td>Data de Nascimento</td>
+                <td>Profissão</td>
+                <td>Sexo</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let User of user">
+                <td>{{User.nome}}</td>
+                <td>{{User.numero_utente}}</td>
+                <td>{{User.data_de_nascimento}}</td>
+                <td>{{User.profissao}}</td>
+                <td>{{User.sexo}}</td>
+                <div class="botao">
+                    <button><a class="editar" (click)="editar(User._id)">Editar</a></button>
+                    <button><a class="remover"(click)="remover(User._id)">Remover</a></button>
+                </div>
+            </tr>
+        </tbody>
+
+
+    </table>
+    <br><br><br>
+    <div class="botao1">
+        <button><a  (click)="voltar()">voltar </a></button>
+    </div>
+</div>

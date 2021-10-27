@@ -1,0 +1,26 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2 class="titulo">Pacientes</h2>
+        </div>
+        <img class="imagem" src="https://image.freepik.com/vetores-gratis/flat-medicos-e-pacientes_23-2147797224.jpg" alt="Covid-19">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+
+        <h2 matSubheader>Páginas dos Pacientes</h2>
+
+
+        <a routerLink="/pacientes" mat-list-item routerLinkActive="list-item-active">Página Inicial</a>
+        <a routerLink="/perfilpaciente" mat-list-item routerLinkActive="list-item-active">Meu Perfil</a>
+        <a routerLink="/marcacoes" mat-list-item routerLinkActive="list-item-active">Marcações Exames</a>
+
+        <a routerLink="/login" (click)="logout()" mat-list-item routerLinkActive="list-item-active">
+            <mat-icon class="icon">exit_to_app</mat-icon>
+            Logout
+        </a>
+
+
+    </mat-nav-list>

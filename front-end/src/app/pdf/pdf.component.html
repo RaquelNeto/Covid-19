@@ -1,0 +1,15 @@
+<form name="uploadPdf" id="uploadPdf" , enctype="multipart/form-data" (submit)="handleSubmit($event)">
+    <div class="content">
+        <h2>Resultado</h2>
+
+        <br/>
+        <br/>
+
+        <input type="file" id="file" name="file" (change)="onFileSelected($event)" />
+
+        <br/>
+
+        <button mat-raised-button class="botao" type="submit">Confirmar</button>
+
+    </div>
+</form>

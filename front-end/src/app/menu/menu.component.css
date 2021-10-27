@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    height: 70px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.logotipo {
+    font-size: 30px;
+    padding: 40px;
+}
+
+.link a {
+    color: red;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.link a:hover {
+    color: cadetblue;
+    text-decoration: underline;
+}
+
+.aside {
+    display: flex;
+}
+
+.fundo {
+    background-image: url(https://d3043uog1ad1l6.cloudfront.net/uploads/2020/03/photo-1584118624012-df056829fbd0.jpeg);
+    padding: 250px 0px 650px 50px;
+    text-align: left;
+}
+
+.fundo h1 {
+    font-size: 65px;
+}
+
+.fundo p {
+    font-size: 30px;
+}

@@ -1,0 +1,20 @@
+:host .icon {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+:host .profile-card {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+
+:host .imagem {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.titulo {
+    font-size: 30px;
+}

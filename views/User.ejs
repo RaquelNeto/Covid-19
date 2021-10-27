@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<body>
+    
+        <div class="container mt-5">
+            <h1>Página Show Utilizador</h1>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <!-- Makes GET request to /register route -->
+                             <%utilizador.forEach(element => {  %>
+                            <form action="update_utilizador/<%=element._id%> " method="GET">
+                              
+                                <div class="form-group">
+                                    <!--Falta buscar os dados automaticamente-->
+                                    <ol class="lista">
+                                        <li>Nome: <%=element.nome%></li>
+                                        <li>Número de Utente: <%=element.numero_utente%></li>
+                                        <li>Email: <%=element.email%> </li>
+                                        <button type="submit" class="botao" >Ver Utilizador</button>
+                                    </ol>
+
+                                </div>
+                                <hr>
+                                  
+                               
+                            </form>
+                            <% });  %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<%- include('partials/footer') %>

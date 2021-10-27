@@ -1,0 +1,69 @@
+<div class="container">
+
+    <h1 class="titulo">Editar Meu Perfil</h1>
+
+    <form class="formulario">
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Email: </label></td>
+                    <input #emailInput class="inputs" name="email" type="email" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Password: </label></td>
+                    <input #passwordnewInput class="inputs" name="passwordnew" type="password" /><br><br>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td><label>Password Antiga: </label></td>
+                    <input #passwordoldInput class="inputs" name="passwordold" type="password" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Morada: </label></td>
+                    <input #moradaInput class="inputs" name="morada" type="text" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Profissão: </label></td>
+                    <input #profissaoInput class="inputs" name="profissao" type="text" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Telemóvel: </label></td>
+                    <input #telemovelInput class="insere" name="telemovel" type="number" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Data de nascimento: </label></td>
+                    <input #dnInput class="insere" name="data_de_nascimento" type= "text" /><br><br>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+
+    <div class="link">
+        <button><a routerLink="/tecnico" (click)="editarUtilizador(emailInput.value,moradaInput.value,profissaoInput.value,telemovelInput.value,dnInput.value,passwordnewInput.value,passwordoldInput.value)" class="botao">Guardar</a></button>
+        <button><a routerLink="/tecnico" (click)="voltar()" class="botao">Cancelar</a></button>
+    </div>
+
+</div>

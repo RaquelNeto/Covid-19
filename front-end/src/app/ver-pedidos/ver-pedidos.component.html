@@ -1,0 +1,92 @@
+<div class="container">
+
+    <h1 class="titulo"> Ver Pedido</h1>
+
+  <form *ngFor="let Pedidos of pedidos">
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Nome: </label></td>
+                    <td><label>{{Pedidos.nome}}</label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Data de Nascimento: {{Pedidos.data_de_nascimento}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Sexo: {{Pedidos.sexo}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Número de Utente: {{Pedidos.numero_utente}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Morada: {{Pedidos.morada}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Profissão: {{Pedidos.profissao}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Telemóvel: {{Pedidos.telemovel}}</label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Email:{{Pedidos.email}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Recomendação: </label></td>
+                    <td><label> {{Pedidos.recomendacao}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Pertence a um grupo de risco: </label></td>
+                    <td><label> {{Pedidos.grupo_risco}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Qual o motivo de pertencer a um grupo de risco: </label></td>
+                    <td><label> {{Pedidos.pq_risco}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="botao">
+            <button class="agendar" (click)="agendarRealizacao()">Agendar Data de Realização</button>
+            <button class="agendar" (click)="voltar()">Voltar</button>
+        </div>
+    </form>
+</div>

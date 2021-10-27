@@ -1,0 +1,26 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2 class="titulo">Covid-19</h2>
+        </div>
+        <img class="imagem" src="https://www.labourstart.org/sars-cov-19.jpg" alt="Covid-19">
+    </div>
+
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+
+        <h2 matSubheader>Páginas</h2>
+
+
+        <a (click)="dashboard()" mat-list-item routerLinkActive="list-item-active">Dashboard</a>
+        <a (click)="meuPerfil()" mat-list-item routerLinkActive="list-item-active">Meu Perfil</a>
+        <a (click)="gestaoutilizadores()" mat-list-item routerLinkActive="list-item-active">Gestão de Técnicos</a>
+        <a (click)="gestaoPedidosConcluidos()" mat-list-item routerLinkActive="list-item-active">Gestão de Pedidos Concluídos</a>
+
+        <a (click)="logout()" mat-list-item routerLinkActive="list-item-active">
+            <mat-icon class="icon">exit_to_app</mat-icon>
+            Logout
+        </a>
+
+
+    </mat-nav-list>

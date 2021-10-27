@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+
+<body>
+
+    <div class="container mt-5">
+        <h1>Aceitar Pedidos</h1>
+
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+
+                        <!-- Makes POST request to /register route -->
+                        <form action="/api/tecnico/aceitarPedidos" method="POST">
+                            <div class="form-group">
+                                <!--Falta buscar os dados automaticamente-->
+                                <% if(pedidosUrgentes.length===0 && pedidosNormais.length ===0){%>
+                                    <label>Não existem Pedidos para serem aceites!</label>
+                                <% }%>
+                                <% pedidosUrgentes.forEach(element=>{ %>
+                                <ol class="lista">
+                                    <li>Nome:<%=element.nome%></li>
+                                    <li>Número de Utente:<%=element.numero_utente%></li>
+                                    <li>Data de Nascimento:<%=element.data_de_nascimento%></li>
+                                    <li>Profissão: <%=element.profissao%></li>
+                                    <li>Pertence a grupo de risco:<%=element.grupo_de_risco%></li>
+                                    <%if(element.grupo_de_risco==="SIM"){%>
+                                            <li>Porque pertence: <%=element.pq_risco%></li>
+                                   <% }%>
+                                   <label name= 'datarealizacao'>Data Realização:</label>
+                                   <input name='datarealizacao' placeholder=<%= element.datapedido + 172800000%> ></input>
+                                    <button type="submit" class="botao" formaction="/api/tecnico/aceitarPedido/<%=element._id%>" method:PATCH>Aceitar</button>
+                                    <button type="submit" class="botao"  formaction="/api/tecnico/eliminarPedido/<%=element._id%>" >Recusar</button>
+                                </ol>
+                                <% });%>
+
+                                <% pedidosNormais.forEach(element=>{ %>
+                                <ol class="lista">
+                                    <li>Nome:<%=element.nome%></li>
+                                    <li>Número de Utente:<%=element.numero_utente%></li>
+                                    <li>Data de Nascimento:<%=element.data_de_nascimento%></li>
+                                    <li>Profissão: <%=element.profissao%></li>
+                                    <li>Pertence a grupo de risco:<%=element.grupo_de_risco%></li>
+                                    <%if(element.grupo_de_risco==="SIM"){%>
+                                            <li>Porque pertence: <%=element.pq_risco%></li>
+                                     <% }%>
+                                    <label name= 'datarealizacao'>Data Realização:</label>
+                                   <input name='datarealizacao' placeholder=<%= element.datapedido + 172800000%> ></input>
+                                     <button type="submit" class="botao" formaction="/api/tecnico/aceitarPedido/<%=element._id%>">Aceitar</button>
+                                    <button type="submit" class="botao"  formaction="/api/tecnico/eliminarPedido/<%=element._id%>" >Recusar</button>
+                                </ol>
+                                <% });%>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>

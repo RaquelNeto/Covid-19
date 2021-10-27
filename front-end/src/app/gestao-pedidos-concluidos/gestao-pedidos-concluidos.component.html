@@ -1,0 +1,33 @@
+<div class="conteudo">
+
+    <h1 class="titulo"> Gestão Pedidos Concluidos
+        <form class="form" method="post" action="pagina_de_resultados.html">
+            <input type="text" name="q" value="Pesquisar...">
+            <input type="submit" value="Pesquisar">
+        </form>
+    </h1> <br> <br>
+
+    <table class="table" border="2">
+        <thead>
+            <tr style="font-weight:bold;">
+                <td>Nome</td>
+                <td>Número de Utente</td>
+                <td>Data de Nascimento</td>
+                <td>Profissão</td>
+                <td>Pertence a um grupo de risco?</td>
+            </tr>
+        </thead>
+
+        <tbody *ngFor="let Pedidos of pedidos">
+            <tr *ngIf="Pedidos.status === 'Terminado' ">
+                <td>{{ Pedidos.nome}}</td>
+                <td>{{ Pedidos.numero_utente }}</td>
+                <td>{{ Pedidos.data_de_nascimento }}</td>
+                <td>{{ Pedidos.profissao }}</td>
+                <td>{{ Pedidos.grupo_de_risco }}</td>
+                <td><button class="voltar" (click)="voltarAtras()">Voltar atras</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

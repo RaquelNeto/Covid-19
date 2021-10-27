@@ -1,0 +1,64 @@
+<div class="container">
+
+    <h1 class="titulo">Editar Utilizador</h1>
+
+    <form class="formulario">
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Email: </label></td>
+                    <input #emailInput class="inputs" name="email" type="email" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Morada: </label></td>
+                    <input #moradaInput class="inputs" name="morada" type="text" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Profissão: </label></td>
+                    <input #profissaoInput class="inputs" name="profissao" type="text" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Telemóvel: </label></td>
+                    <input #telemovelInput class="insere" name="telemovel" type="number" /><br><br>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Data de nascimento: </label></td>
+                    <input #dnInput class="insere" name="data_de_nascimento" type="text" /><br><br>
+                </tr>
+            </table>
+        </div><br>
+        <mat-form-field>
+            <mat-label>Select an option</mat-label>
+            <mat-select #roleInput [(value)]="selected">
+                <mat-option>Role</mat-option>
+                <mat-option value="TECNICO">Técnico</mat-option>
+                <mat-option value="ADMIN">Administrador</mat-option>
+                <mat-option value="PACIENTE">Paciente</mat-option>
+            </mat-select>
+        </mat-form-field><br>
+    </form>
+
+    <div class="link">
+        <button><a routerLink="/gestaoutilizadores" (click)="editarUtilizador(emailInput.value,moradaInput.value,profissaoInput.value,telemovelInput.value,roleInput.value,dnInput.value)" class="botao">Guardar</a></button>
+        <button><a routerLink="/gestaoutilizadores" class="botao">Cancelar</a></button>
+    </div>
+
+</div>

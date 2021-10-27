@@ -1,0 +1,48 @@
+<mat-drawer-container class="container">
+
+    <mat-drawer class="drawer" mode="side" [opened]="sideBarTecnicosOpen">
+        <app-sidebartecnicos></app-sidebartecnicos>
+    </mat-drawer>
+
+
+    <mat-drawer-content class="content">
+
+        <table class="table" border="2">
+            <thead>
+                <tr style="font-weight:bold;">
+                    <td>Nome</td>
+                    <td>Número de Utente</td>
+                    <td>Data de Nascimento</td>
+                    <td>Profissão</td>
+                    <td>Pertence a um grupo de risco?</td>
+                </tr>
+            </thead>
+            <tbody *ngFor="let Pedidos of pedidos">
+                <tr *ngIf="Pedidos.grupo_de_risco === 'SIM' ">
+                    <td>{{ Pedidos.nome}}</td>
+                    <td>{{ Pedidos.numero_utente }}</td>
+                    <td>{{ Pedidos.data_de_nascimento }}</td>
+                    <td>{{ Pedidos.profissao }}</td>
+                    <td>{{ Pedidos.grupo_de_risco }}</td>
+                    <td><button class="aceitar" (click)="aceitarPedido(Pedidos._id)">Aceitar</button></td>
+                    <td><button class="recusar" (click)="recusarPedido(Pedidos._id)">Recusar</button></td>
+                    <td><button class="ver" (click)="verPedido(Pedidos._id)">Ver Pedido</button></td>
+            </tbody>
+            <tbody *ngFor="let Pedidos of pedidos">
+                <tr *ngIf="Pedidos.grupo_de_risco === 'NÃO' ">
+                    <td>{{ Pedidos.nome}}</td>
+                    <td>{{ Pedidos.numero_utente }}</td>
+                    <td>{{ Pedidos.data_de_nascimento }}</td>
+                    <td>{{ Pedidos.profissao }}</td>
+                    <td>{{ Pedidos.grupo_de_risco }}</td>
+                    <td><button class="aceitar" (click)="aceitarPedido(Pedidos._id)">Aceitar</button></td>
+                    <td><button class="recusar" (click)="recusarPedido(Pedidos._id)">Recusar</button></td>
+                    <td><button class="ver" (click)="verPedido(Pedidos._id)">Ver Pedido</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </mat-drawer-content>
+
+</mat-drawer-container>

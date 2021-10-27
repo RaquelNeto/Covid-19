@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<body>
+    
+        <div class="container mt-5">
+            <h1>Página Pedidos</h1>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <!-- Makes POST request to /register route -->
+                            <form action="/paginaPedidos" method="POST"></form>
+                               <%pedidos.forEach(element => {  %>
+                                <div class="form-group">
+                                    <!--Falta buscar os dados automaticamente-->
+                                    <ol class="lista">
+                                        <li>Nome: <%=element.nome%></li>
+                                        <li>Número de Utente: <%element.numero_utente%></li>
+                                        <li>Data de Nascimento: <%element.data_de_nascimento%> </li>
+                                        <li>Profissão: <%element.profissao%></li>
+                                        <li>Sexo: <%element.sexo%></li>
+                                        <button type="submit" class="botao">Ver pedido</button>
+                                    </ol>
+
+                                </div>
+                                <hr>
+                                  <% });  %>
+                               
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<%- include('partials/footer') %>

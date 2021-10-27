@@ -1,0 +1,57 @@
+ <%- include('partials/header') %>
+<body>
+   
+        <div class="container mt-5">
+            <h1>Registo</h1>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <!-- Makes POST request to /register route -->
+                            <form action="/api/user/registo" method="POST">
+                                <div class="form-group">
+                                    <label for="nome">Nome:</label>
+                                    <input type="text" class="form-control" name="nome"></br>
+
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" name="email"></br>
+
+                                    <label for="password">Password: </label>
+                                    <input type="password" class="form-control" name="password"></br>
+
+
+                                    <label for="data_de_nascimento">Data de nascimento: </label>
+                                    <input type="text" class="form-control" name="data_de_nascimento"></br>
+
+
+                                    <p>Introduza o seu sexo:</p>
+                                    <input type="radio" id="male" name="sexo" value="male">
+                                    <label for="male">Masculino</label><br>
+                                    <input type="radio" id="female" name="sexo" value="female">
+                                    <label for="female">Feminino</label><br>
+
+                                    <label for="numero_utente">Número de Utente:</label>
+                                    <input type="number" class="form-control" name="numero_utente"></br>
+
+                                    <label for="morada">Morada:</label>
+                                    <input type="text" class="form-control" name="morada"></br>
+
+                                    <label for="profissao">Profissão:</label>
+                                    <input type="text" class="form-control" name="profissao"></br>
+
+                                    <label for="telemovel">Telemóvel:</label>
+                                    <input type="number" class="form-control" name="telemovel" value="919999999"></br>
+                                </div>
+                                <button type="submit" class="btn btn-dark">Registar</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/header') %>
+

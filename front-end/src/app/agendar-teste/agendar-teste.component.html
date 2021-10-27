@@ -1,0 +1,74 @@
+<div class="container">
+
+    <h1 class="titulo"> Agendar Pedido</h1>
+
+    <form *ngFor="let Pedidos of pedidos">
+        <div class="form-group">
+            <table >
+                <tr>
+                    <td><label>Nome: {{Pedidos.nome}}</label></td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Número de Utente: {{Pedidos.numero_utente}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Data de Nascimento:{{Pedidos.data_de_nascimento}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Profissão: {{Pedidos.profissao}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Sexo: {{Pedidos.sexo}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Recomendação: {{Pedidos.recomendacao}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Pertence a um grupo de risco: {{Pedidos.grupo_de_risco}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Qual o motivo de pertencer a um grupo de risco: {{Pedidos.pq_risco}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <tr>
+                <td><label>Agendar: </label></td>
+                <td><input #dataInput id="date" type="date"></td>
+            </tr>
+        </div>
+        <div class="botao">
+            <button class="opcao" (click)="confirmarAgendamento(dataInput.value)">Confirmar</button>
+            <button class="opcao" (click)="cancelarAgendamento()">Cancelar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+.drawer {
+    width: 350px;
+}
+
+.container {
+    height: 100%;
+}
+
+.content {
+    padding: 20px;
+
+}
+
+
+.table {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: .5em;
+    table-layout: fixed;
+    text-align: center;
+
+}
+
+.aceitar {
+    color: white;
+    background-color: red;
+}
+
+.aceitar:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.recusar {
+    color: white;
+    background-color: red;
+}
+
+.recusar:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.ver {
+    color: white;
+    background-color: red;
+}
+
+.ver:hover {
+    background-color: royalblue;
+    color: white;
+}

@@ -1,0 +1,93 @@
+<div class="conteudo">
+    <div *ngIf="errors">
+        {{ errors }}
+    </div>
+
+    <h1 class="titulo"> Criar Utilizador</h1>
+
+    <form>
+        <label for="nome">Nome: <input #nomeInput [(ngModel)]="nome" name="nome" type="text" /> </label><br> <br>
+
+        <label for="email">Email: <input #emailInput [(ngModel)]="email" name="username" type="text" /></label><br><br>
+
+
+        <label for="password">Password: <input #passwordInput [(ngModel)]="password" name="password"
+        type="password" /></label><br><br>
+
+
+        <label for="data_de_nascimento">Data de Nascimento:  <input #data_de_nasciementoInput [(ngModel)]="data_de_nascimento" name="data_de_nascimento" type="date" /></label><br><br>
+
+
+        <!--
+        <p>Introduza o seu sexo:</p>
+        <label class="masculino" for="male">Masculino</label>
+        <input #masculinoInput [(ngModel)]="sexo" type="radio" name="gender" value="Masculino"><br>
+        <label class="feminino" for="female">Feminino</label>
+        <input #femininoInput [(ngModel)]="sexo" type="radio" name="gender" value="Feminino"> <br><br><br>
+        -->
+        <!--
+        <h2>Sexo:</h2>
+        <label for="Feminino">Feminino:
+        <input #femininoInput [(ngModel)]="sexo" name="Feminino" type="radio" value="Feminino" /></label><br><br>
+
+        <label for="Masculino">Masculino: <input #masculinoInput [(ngModel)]="sexo" name="Masculino" type="radio" value="Masculino" /></label>
+        <br><br><br>
+        -->
+        <!--
+        <section class="tp-section">
+            <mat-checkbox #masculinoInput value="Masculino" checked>Masculino</mat-checkbox>
+            <mat-checkbox #femininoInput value="Feminino">Feminino</mat-checkbox>
+        </section> <br>
+        -->
+
+        <mat-form-field appearance="fill">
+            <mat-label #sexoInput>Sexo</mat-label>
+            <mat-select>
+                <mat-option value="Masculino">Masculino</mat-option>
+                <mat-option value="Feminino">Feminino</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+
+
+        <!--
+        <mat-radio-group aria-label="Seleciona o sexo">
+            <mat-radio-button #masculinoInput value="Masculino">Masculino</mat-radio-button>
+            <mat-radio-button #femininoInput value="Feminino">Feminino</mat-radio-button>
+        </mat-radio-group><br><br><br>
+      -->
+
+
+        <label for="numero_utente">Número de Utente <input #numero_utenteInput [(ngModel)]="numero_utente" name="numero_utente" type="number" /></label><br><br>
+
+
+        <label for="morada">Morada: <input #moradaInput [(ngModel)]="morada" name="morada" type="text" /></label><br><br>
+
+
+        <label for="profissao">Profissão: <input #profissaoInput [(ngModel)]="profissao" name="profissao"
+        type="text" /></label><br><br>
+
+
+        <label for="telemovel">Telemóvel: <input #telemovelInput [(ngModel)]="telemovel" name="telemovel"
+        type="number" /></label><br><br>
+
+        <mat-form-field>
+            <mat-label>Select an option</mat-label>
+            <mat-select #roleInput [(value)]="selected">
+                <mat-option>Role</mat-option>
+                <mat-option value="TECNICO">Técnico</mat-option>
+                <mat-option value="ADMIN">Administrador</mat-option>
+                <mat-option value="PACIENTE">Paciente</mat-option>
+            </mat-select>
+        </mat-form-field><br><br>
+
+        <button class="criar" (click)="createUser(nomeInput.value, emailInput.value, data_de_nasciementoInput.value, sexoInput.value, passwordInput.value, numero_utenteInput.value, moradaInput.value, telemovelInput.value, profissaoInput.value,roleInput.value)">
+        Criar Utilizador
+      </button>
+
+        <a routerLink="/gestaoutilizadores" class="link">Voltar atrás</a>
+
+    </form>
+
+
+</div>

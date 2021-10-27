@@ -1,0 +1,26 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2 class="titulo">Técnicos</h2>
+        </div>
+        <img class="imagem" src="https://www.lucastubino.adv.br/wp-content/uploads/2019/01/saude.jpg" alt="Covid-19">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-nav-list>
+
+        <h2 matSubheader>Páginas dos Técnicos</h2>
+
+        <a routerLink="/tecnicos" mat-list-item routerLinkActive="list-item-active">Página Inicial</a>
+        <a routerLink="/perfilTecnico" mat-list-item routerLinkActive="list-item-active">Meu Perfil</a>
+        <a routerLink="/pacientegeral" mat-list-item routerLinkActive="list-item-active">Perfil Pacientes</a>
+        <a routerLink="/gestaoPedidoAceites" mat-list-item routerLinkActive="list-item-active">Ver Pedidos Aceites</a>
+
+        <a routerLink="/login" mat-list-item routerLinkActive="list-item-active">
+            <mat-icon class="icon">exit_to_app</mat-icon>
+            Logout
+        </a>
+
+
+    </mat-nav-list>

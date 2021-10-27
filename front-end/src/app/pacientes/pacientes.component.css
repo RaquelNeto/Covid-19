@@ -1,0 +1,19 @@
+.drawer {
+    width: 350px;
+}
+
+.container {
+    height: 100%;
+}
+
+.content {
+    padding: 20px;
+}
+
+.table {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: .5em;
+    table-layout: fixed;
+    text-align: center;
+}

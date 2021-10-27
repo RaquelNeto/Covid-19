@@ -1,0 +1,586 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2.0.0",
+        "title": "Covid-19 API",
+        "description": "REST API para registar pedidos de diagnostico no centro de análises",
+        "contact": {
+            "name": "Raquel Neto",
+            "email": "8160129@estg.ipp.pt"
+        }
+    },
+    "host": "http://localhost:3000",
+    "basePath": "/api",
+    "tags": [{
+            "name": "Users",
+            "description": "API para os utilizadores no sistema."
+        },
+        {
+            "name": "Admin",
+            "description": "API para o Administrador no sistema."
+        },
+        {
+            "name": "Tecnico",
+            "description": "API para o Tecnico no sistema."
+        },
+        {
+            "name": "Dashboard",
+            "description": "API para o Dashboard no sistema."
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Login do utilizador.",
+                "description": "Login de um utilizador no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Utilizadores que queremos registar.",
+                    "schema": {
+                        "$ref": "#/definitions/Login"
+                    }
+                }],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilizador com login efetuado com sucesso"
+                    }
+                }
+            }
+        },
+        "/user/logout": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Logout de um utilizador.",
+                "description": "Logouts de um utilizador no sistema.",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilizador efetuou o logout"
+                    }
+                }
+            }
+        },
+        "/user/registo": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Criar um novo utilizador.",
+                "description": "Criar um novo utilizador.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Criar um novo utilizador.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Novo utilizador criado",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/allusers": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obter todos os utilizadores",
+                "description": "Obter todos os utilizadores no sistema.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/eliminarutilizador/:idutilizador": {
+            "delete": {
+                "summary": "Elimina o utilizador pelo ID.",
+                "description": "Elimina o utilizador pelo ID no sistema.",
+                "tags": [
+                    "Admin"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilizador eliminado",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/registoutilizador": {
+            "post": {
+                "summary": "O administrador pode registar um utilizador.",
+                "description": "O administrador pode registar um utilizador no sistema.",
+                "tags": [
+                    "Admin"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilizador registado pelo administrador",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/updatepass": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "O administrador pode atualizar a sua password.",
+                "description": "O administrador pode atualizar a sua password no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Administrador com novos dados.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Atualização do utilizador",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/update_utilizador/:idutilizador": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "O administrador pode atualizar utilizador através do ID.",
+                "description": "O administrador pode atualizar utilizador através do ID no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Administrador com novos dados.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Atualização do administrador",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/tecnico/lancarPedido/:idutilizador": {
+            "get": {
+                "tags": [
+                    "Tecnico"
+                ],
+                "summary": "O tecnico pode lançar o pedido através do ID.",
+                "description": "O tecnico pode lançar o pedido através do ID no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Tecnico lança o pedido.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Tecnico lança o pedido",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/tecnico/aceitarPedido": {
+            "get": {
+                "tags": [
+                    "Tecnico"
+                ],
+                "summary": "O tecnico pode aceitar o pedido.",
+                "description": "O tecnico pode aceitar o pedido no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Tecnico aceita o pedido.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Tecnico aceita o pedido",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/tecnico/aceitarPedido/:idutilizador": {
+            "put": {
+                "tags": [
+                    "Tecnico"
+                ],
+                "summary": "O tecnico pode aceitar o pedido através do ID.",
+                "description": "O tecnico pode aceitar o pedido através do ID no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Tecnico aceitar o pedido.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Tecnico aceita o pedido",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/tecnico/eliminarPedido/:idutilizador": {
+            "delete": {
+                "tags": [
+                    "Tecnico"
+                ],
+                "summary": "O tecnico pode eliminar o pedido através do ID.",
+                "description": "O tecnico pode eliminar o pedido através do ID no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Tecnico elimina o pedido.",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Tecnico elimina o pedido",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/testesrealizados'": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "summary": "Dashboard com todos os testes realizados.",
+                "description": "Dashboard com todos os testes realizados no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Dashboard com todos os testes realizados..",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard com todos os testes realizados.",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/testesrealizadosporpessoa'": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "summary": "Dashboard com todos os testes realizados por pessoa.",
+                "description": "Dashboard com todos os testes realizados por pessoa no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Dashboard com todos os testes realizados..",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard com todos os testes realizados por pessoa.",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/pessoasinfetadas'": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "summary": "Dashboard com todos as pessoas infetadas.",
+                "description": "Dashboard com todos as pessoas infetadas no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Dashboard com todos as pessoas infetadas",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard com todos as pessoas infetadas",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/numerodepessoasinfetadasporsexo'": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "summary": "Dashboard com todos as pessoas infetadas por sexo.",
+                "description": "Dashboard com todos as pessoas infetadas por sexo no sistema.",
+                "parameters": [{
+                    "name": "user",
+                    "in": "body",
+                    "description": "Dashboard com todos as pessoas infetadas por sexo",
+                    "schema": {
+                        "$ref": "#/definitions/User"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard com todos as pessoas infetadas por sexo",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Login": {
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string",
+                    "format": "password"
+                }
+            }
+        },
+        "User": {
+            "required": [
+                "name",
+                "data_de_nascimento",
+                "sexo",
+                "numero_utente",
+                "morada",
+                "profissao",
+                "telemovel",
+                "email",
+                "password",
+                "date",
+                "role",
+                "Estado",
+                "Teste_Realizado"
+
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "data_de_nascimento": {
+                    "type": "string"
+                },
+                "sexo": {
+                    "type": "string"
+                },
+                "numero_utente": {
+                    "type": "number",
+                    "min": 9
+                },
+                "morada": {
+                    "type": "string"
+                },
+                " profissao": {
+                    "type": "string"
+                },
+                "telemovel": {
+                    "type": "number",
+                    "min": 9
+                },
+                "email": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string",
+                    "format": "password"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "role": {
+                    "type": "string",
+                    "enum": ["PACIENTE", "ADMIN", "TECNICO"]
+                },
+                "Estado": {
+                    "type": "integer",
+                    "enum": ["Suspeito", "Infetado", "Não Infetado"],
+                    "default": "Suspeito"
+                },
+                "Teste_Realizado": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Pedido": {
+            "required": [
+                "nome",
+                "data_de_nascimento",
+                "sexo",
+                "numero_utente",
+                "morada",
+                "profissao",
+                "telemovel",
+                "email",
+                "password",
+                "date_do_pedido",
+                "datarealizacao",
+                "dataresultado",
+                "resultado",
+                "recomendacao",
+                "grupo_de_risco",
+                "pq_risco",
+                "nome_do_tecnico",
+                "status"
+
+            ],
+            "properties": {
+                "nome": {
+                    "type": "string"
+                },
+                "data_de_nascimento": {
+                    "type": "string"
+                },
+                "sexo": {
+                    "type": "string"
+                },
+                "numero_utente": {
+                    "type": "number",
+                    "min": 9
+                },
+                "morada": {
+                    "type": "string"
+                },
+                " profissao": {
+                    "type": "string"
+                },
+                "telemovel": {
+                    "type": "number",
+                    "min": 9
+                },
+                "email": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string",
+                    "format": "password"
+                },
+                "datapedido": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "datarealizacao": {
+                    "type": "string"
+                },
+                "dataresultado": {
+                    "type": "string"
+                },
+                "resultado": {
+                    "type": "string",
+                    "enum": ["Suspeito", "Infetado", "Não Infetado"]
+                },
+                "recomendacao": {
+                    "type": "string"
+                },
+                "grupo_de_risco": {
+                    "type": "string",
+                    "max": 3
+                },
+                "pq_risco": {
+                    "type": "string"
+                },
+                "nome_do_tecnico": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": ["Em espera...", "Aceite", "Terminado"]
+                }
+            }
+        }
+    }
+}

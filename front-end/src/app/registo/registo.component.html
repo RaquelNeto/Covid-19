@@ -1,0 +1,48 @@
+<div class="body">
+    <div class="container">
+        <div *ngIf="errors">
+            {{ errors }}
+        </div>
+
+        <form>
+            <h1 class="titulo">Registo</h1>
+
+            <label for="name">Nome</label><br>
+            <input #nomeInput [(ngModel)]="nome" name="name" type="text" /><br><br>
+
+            <label for="email">Email</label><br>
+            <input #emailInput [(ngModel)]="email" name="email" type="text" /><br><br>
+
+            <label for="password">Password</label><br>
+            <input #passwordInput [(ngModel)]="password" name="password" type="password" /><br><br>
+
+            <label for="numero_utente">Número de Utente</label><br>
+            <input #numero_utenteInput [(ngModel)]="numero_utente" name="numero_utente" type="number" /><br><br>
+
+            <label for="data_de_nascimento">Data de Nascimento</label><br>
+            <input #data_de_nasciementoInput [(ngModel)]="data_de_nascimento" name="data_de_nascimento" type="date" /><br><br>
+
+            <mat-form-field>
+                <mat-label>Introduza o seu sexo</mat-label>
+                <mat-select #sexoInput [(value)]="selected">
+                    <mat-option>Opção</mat-option>
+                    <mat-option #masculinoInput value="Masculino">Masculino</mat-option>
+                    <mat-option #femininoInput value="Feminino">Feminino</mat-option>
+                </mat-select>
+            </mat-form-field><br><br>
+
+
+            <label for="morada">Morada</label><br>
+            <input #moradaInput [(ngModel)]="morada" name="morada" type="text" /><br><br>
+
+            <label for="profissao">Profissão</label><br>
+            <input #profissaoInput [(ngModel)]="profissao" name="profissao" type="text" /><br><br>
+
+            <label for="telemovel">Telemóvel</label><br>
+            <input #telemovelInput [(ngModel)]="telemovel" name="telemovel" type="number" /><br><br>
+
+            <button class="botao1" (click)="createUser(nomeInput.value, emailInput.value, data_de_nasciementoInput.value, sexoInput.value, passwordInput.value, numero_utenteInput.value, moradaInput.value, telemovelInput.value, profissaoInput.value)" type="submit">Registar</button>
+        </form>
+
+    </div>
+</div>

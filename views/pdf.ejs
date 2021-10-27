@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+    <div class="imagem">
+        <div class="conteudoinicial" >
+            <div class="empresa" >
+                <h1>
+                    <strong><u>Centro Covid-19</u></Strong>
+                </h1>
+            </div>
+            <div class="paciente" >
+                <h1><strong>Dados do cliente:</strong></h1>
+                <h3><strong>Nome: <%=nome_paciente%></strong>
+                </h3>
+                <h3><strong>Número de utente:  <%=numero_utente%></strong>
+                </h3>
+                <h3><strong>Morada: <%=morada%></strong>
+                </h3>
+                <h3><strong>Telemovel: <%=telemovel%></strong>
+                </h3>
+                <h3><strong>Email: <%=email%></strong>
+                </h3>
+            </div>
+        </div>
+        <div class="conteudo_todo">
+            <h1 class="conteudo" >Assunto: <strong><u>Resultado do Teste</u><strong></h1>
+        <p class="informação" >
+            Caro <strong><u><%=nome_paciente%></u></strong> o seu teste a epidemia covid-19, conhecido como, coronavirus, deu <strong><u><%=resultado%></u></strong>
+                </p>
+        </div>
+        <div class="assinatura">
+            <h2><strong>Assinatura:</strong>
+                <%=nome_tecnico%>
+            </h2>
+        </div>
+        <div class="footer" >
+            <h5><strong>Centro covid-19 mais proximo de si!</strong></h5>
+            <h5>Pagina : 1/1 </h5>
+        </div>
+    </div>
+<%- include('partials/footer') %>

@@ -1,0 +1,36 @@
+.container {
+    background-image: url(https://abrilveja.files.wordpress.com/2017/09/virus-hiv-20170523-0010.jpg);
+    text-align: center;
+    padding: 20px 0px 40px 0px;
+}
+
+.titulo {
+    font-size: 40px;
+    padding: 10px 0px 10px 0px;
+    color: white;
+}
+
+.form-group {
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 400px 10px 400px;
+    color: white;
+}
+
+.botao {
+    padding-top: 30px;
+    font-size: 25px;
+    padding-bottom: 30px;
+}
+
+.opcao {
+    font-size: 25px;
+    color: white;
+    background-color: red;
+    margin-left: 10px;
+}
+
+.opcao:hover {
+    background-color: royalblue;
+    color: white;
+}

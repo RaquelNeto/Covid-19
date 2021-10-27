@@ -1,0 +1,27 @@
+<div class="body">
+    <div class="container">
+        <h1 class="titulo">Marcações de Exames</h1>
+
+        <form class="dados">
+
+            <label for="recomendacao">Recomendação:  </label>
+            <input #recomendacaoInput name="recomendacao" type="text" /><br><br>
+
+
+            <mat-form-field>
+                <mat-label>Pertence grupo de risco?</mat-label>
+                <mat-select #resultadoInput [(value)]="selected">
+                    <mat-option>Opção</mat-option>
+                    <mat-option #simInput value="SIM">SIM</mat-option>
+                    <mat-option #naoInput value="NÃO">NÃO</mat-option>
+                </mat-select>
+            </mat-form-field><br><br>
+
+            <label for="motivo">Qual o motivo de pertencer a um grupo de risco?  </label>
+            <input #motivoInput name="motivo" type="text" /><br><br>
+
+            <button class="marcar" (click)="marcarExames(recomendacaoInput.value,simInput.value||naoInput.value,motivoInput.value)">Marcar Exame</button>
+        </form>
+
+    </div>
+</div>

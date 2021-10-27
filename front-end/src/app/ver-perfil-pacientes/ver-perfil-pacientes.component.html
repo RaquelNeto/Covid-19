@@ -1,0 +1,77 @@
+<<div class="container"  *ngFor="let User of user">
+
+    <h1 class="titulo"> Perfil Paciente:
+        {{User.nome}}
+    </h1>
+
+<form  >
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Nome: {{User.nome}}</label></td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Data de Nascimento: {{User.data_de_nascimento}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Sexo: {{User.sexo}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Número de Utente: {{User.numero_utente}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Morada: {{User.morada}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Profissão: {{User.profissao}} </label></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Telemóvel: {{User.telemovel}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Email: {{User.email}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Password:  </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="link">
+            <a routerLink="/tecnicos" class="btn btn-link">Voltar atrás</a>
+        </div>
+    </form>
+</div>

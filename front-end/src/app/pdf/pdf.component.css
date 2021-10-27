@@ -1,0 +1,15 @@
+#uploadPdf {
+    background-image: url(https://abrilveja.files.wordpress.com/2017/09/virus-hiv-20170523-0010.jpg);
+    text-align: center;
+    padding: 20px 0px 200px 0px;
+}
+
+.botao {
+    background-color: red;
+    color: white;
+}
+
+.botao:hover {
+    background-color: royalblue;
+    color: white;
+}

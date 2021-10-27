@@ -1,0 +1,39 @@
+.body {
+    background-image: url(https://previews.123rf.com/images/samarttiw/samarttiw1603/samarttiw160300016/55867928-molecular-structure-medical-background-illustrations.jpg);
+    text-align: center;
+}
+
+.titulo {
+    font-size: 50px;
+}
+
+.container {
+    font-size: 20px;
+    margin: 5px;
+    padding: 40px 0px 20px 20px;
+}
+
+.dados {
+    padding-top: 50px;
+    padding-bottom: 110px;
+}
+
+.marcar {
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+}
+
+.marcar:hover {
+    background-color: cadetblue;
+    color: white;
+}
+
+.container input {
+    font-size: 18px;
+    height: 20px;
+    min-width: 450px;
+}

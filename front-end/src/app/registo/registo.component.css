@@ -1,0 +1,42 @@
+.body {
+    background-image: url(https://d3043uog1ad1l6.cloudfront.net/uploads/2020/03/photo-1584118624012-df056829fbd0.jpeg);
+    padding: 5px;
+}
+
+.titulo {
+    font-size: 50px;
+    padding: 10px 0px 20px 40px;
+}
+
+.container {
+    font-size: 20px;
+    margin: 5px;
+    padding: 40px 0px 250px 20px;
+}
+
+.feminino {
+    padding: 10px;
+}
+
+.masculino {
+    padding: 7px;
+}
+
+.botao1 {
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+}
+
+.botao1:hover {
+    background-color: cadetblue;
+    color: white;
+}
+
+.container input {
+    font-size: 18px;
+    height: 20px;
+    min-width: 450px;
+}

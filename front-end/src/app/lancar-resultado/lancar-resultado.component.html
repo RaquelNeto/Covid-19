@@ -1,0 +1,111 @@
+<div class="container">
+
+    <h1 class="titulo"> Lançar Resultado</h1>
+
+    <form *ngFor="let Pedidos of pedidos">
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Nome: </label></td>
+                    <td><label>{{Pedidos.nome}}</label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Data de Nascimento: {{Pedidos.data_de_nascimento}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Sexo: {{Pedidos.sexo}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Número de Utente: {{Pedidos.numero_utente}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Morada: {{Pedidos.morada}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Profissão: {{Pedidos.profissao}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Telemóvel: {{Pedidos.telemovel}}</label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Email:{{Pedidos.email}} </label></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td><label>Password:  </label></td>
+                </tr>
+            </table>
+        </div>
+
+        <td><label for="resultado">Resultado:  <button class="opcao" >Upload Ficheiros</button> </label></td>
+
+        <mat-form-field>
+            <mat-label>Selecione uma opção</mat-label>
+            <mat-select #resultadoInput [(value)]="selected">
+                <mat-option>Opção</mat-option>
+                <mat-option value="Não Infetado">Não Infetado</mat-option>
+                <mat-option value="Infetado">Infetado</mat-option>
+            </mat-select>
+        </mat-form-field><br><br>
+        <!--
+        <div id="fileSelector">
+            <input type="file" name="fileUplaod" id="fileUpload" multiple ng2FileSelect [uploader]="uploader">
+        </div>
+        <div>
+            <div class="row uploadList" *ngFor="let item of uploader.queue">
+                <div class="col-sm-4">{{item.file.name}}</div>
+                <div class="col-sm-4">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" [ngStyle]="{'width':item.progress+'%'}"></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div> <br>
+                <mat-form-field>
+                    <mat-label>Selecione uma opção</mat-label>
+                    <mat-select #resultadoInput [(value)]="selected">
+                        <mat-option>Opção</mat-option>
+                        <mat-option value="Não Infetado">Não Infetado</mat-option>
+                        <mat-option value="Infetado">Infetado</mat-option>
+                    </mat-select>
+                </mat-form-field><br><br>
+            </div>-->
+
+        <div class="botao">
+            <button class="opcao" (click)="confirmar(resultadoInput.value)">Confirmar</button>
+            <button class="opcao" (click)="retroceder()">Voltar atrás</button>
+        </div>
+
+    </form>

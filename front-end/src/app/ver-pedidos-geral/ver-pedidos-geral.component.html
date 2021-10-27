@@ -1,0 +1,38 @@
+<div class="conteudo">
+
+    <h1 class="titulo"> Ver Pacientes
+
+    </h1>
+
+
+
+    <table class="tabelas" border="2">
+
+        <thead>
+            <tr style="font-weight:bold;">
+                <td>Nome</td>
+                <td>Número de Utente</td>
+                <td>Data de Nascimento</td>
+                <td>Profissão</td>
+                <td>Sexo</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let User of user">
+                <td>{{User.nome}}</td>
+                <td>{{User.numero_utente}}</td>
+                <td>{{User.data_de_nascimento}}</td>
+                <td>{{User.profissao}}</td>
+                <td>{{User.sexo}}</td>
+                <div class="botao">
+
+                    <button><a class="voltar"(click)="voltar()">Voltar</a></button>
+                </div>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+</div>

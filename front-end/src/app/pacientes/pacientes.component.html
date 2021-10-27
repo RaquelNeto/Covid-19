@@ -1,0 +1,31 @@
+<mat-drawer-container class="container">
+
+    <mat-drawer class="drawer" mode="side" [opened]="sideBarOpen">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <mat-drawer-content class="content">
+        <h1>Estado do Paciente: </h1>
+        <table class="table" border="2">
+            <thead>
+                <tr style="font-weight:bold;">
+                    <td>Número de Utente</td>
+                    <td>Data de Pedido</td>
+                    <td>Data de Realização</td>
+                    <td>Resultado</td>
+                </tr>
+            </thead>
+
+            <tbody *ngFor="let Pedidos of pedidos">
+                <tr>
+                    <td>{{Pedidos.numero_utente}}</td>
+                    <td>{{Pedidos.datapedido}}</td>
+                    <td>{{Pedidos.datarealizacao}}</td>
+                    <td>{{Pedidos.resultado}}</td>
+                    <td> <button class="marcar" (click)="downloadPDF()">downloadPDF</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-drawer-content>
+
+</mat-drawer-container>

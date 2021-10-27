@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.drawer {
+    width: 350px;
+}
+
+.container {
+    height: 100%;
+}
+
+.content {
+    padding: 20px;
+}
